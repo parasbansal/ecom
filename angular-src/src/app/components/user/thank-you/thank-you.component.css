@@ -1,0 +1,9 @@
+.thank-img{
+    display: block;
+    margin: 0 auto;
+    background: url('/assets/images/thanks.jpg') #98d3e5;
+    background-repeat: no-repeat;
+    background-position: center; 
+    width: 98vw;
+    height: 90vh;
+}

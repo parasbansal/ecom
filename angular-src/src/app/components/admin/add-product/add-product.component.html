@@ -1,0 +1,26 @@
+<div class="container top-space">
+
+  <mat-card class="add-product-card">
+    <div class="page-header">
+      Add new product
+    </div>
+    <div class="error">{{ error }}</div>
+    <form [formGroup]="addProductForm" novalidate>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Price (Rs.)" formControlName="price">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Stock" formControlName="stock">
+      </mat-form-field>
+      <input type="file" id="photo" formControlName="photo">
+      <br>
+      <br>
+      <div>
+        <button mat-raised-button color="primary" class="block" (click)="addProduct()">Add Product</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

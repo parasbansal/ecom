@@ -1,0 +1,43 @@
+.checkout-card{
+    max-width: 40rem;
+    margin: 0 auto;
+}
+mat-form-field{
+    width: 100%;
+}
+.stepper-actions{
+    text-align: center;
+    margin-top: 1rem;
+}
+.payment-actions{
+    text-align: left;
+}
+.form-fields{
+    margin: 0 auto;
+}
+.pd-form-fields{
+    width: 350px;
+}
+.address-form-fields{
+    width: 350px;
+}
+
+
+
+.product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+.product-heading{
+    font-weight: bold;
+}
+.product img{
+    height: 50px;
+}
+.action-buttons{
+    text-align: right;
+    margin-top: 15px;
+}

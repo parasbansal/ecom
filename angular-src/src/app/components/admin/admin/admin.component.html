@@ -1,0 +1,15 @@
+<div class="navbar mat-elevation-z6">
+    <mat-toolbar color="primary" role="header">
+        <span class="brand-name-box">
+            <span class="brand-name">E-commerce | Admin</span>
+        </span>
+        <span class="flex-spacer"></span>
+        <span class="right-buttons">
+            <button mat-button [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']">
+                Home
+            </button>
+        </span>
+    </mat-toolbar>
+</div>
+<router-outlet>
+</router-outlet>

@@ -1,0 +1,110 @@
+<div class="container top-space">
+  <mat-card class="checkout-card">
+    <mat-horizontal-stepper linear>
+
+      <mat-step [stepControl]="personalDetailsForm">
+        <form [formGroup]="personalDetailsForm" novalidate>
+          <ng-template matStepLabel>Details</ng-template>
+          <div class="form-fields pd-form-fields">
+            <div class="sub-heading">Please enter your details</div>
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="number" matInput placeholder="Phone" formControlName="phone" maxlength="10" required>
+            </mat-form-field>
+            <div class="stepper-actions">
+              <button mat-raised-button color="primary" matStepperNext>Proceed</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="addressForm">
+        <form [formGroup]="addressForm" novalidate>
+          <ng-template matStepLabel>Address</ng-template>
+          <div class="form-fields address-form-fields">
+            <div class="sub-heading" class="sub-heading">Please provide your delivery address</div>
+            <div>
+              <button mat-raised-button color="primary" (click)="useCurrentLocation()" class="block">Use my current location</button>
+            </div>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Address" formControlName="address" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="number" matInput placeholder="Pincode" formControlName="pincode" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City" formControlName="city" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="State" formControlName="state" required>
+            </mat-form-field>
+            <div class="stepper-actions">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary" matStepperNext>Proceed</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Summary</ng-template>
+        <div class="sub-heading">Your order summary</div>
+        <div>
+          <div class="products">
+            <div class="product product-heading">
+              <span>Product</span>
+              <span>Quantity</span>
+              <span>Price</span>
+            </div>
+            <div class="product" *ngFor="let product of cartProducts">
+              <span>
+                <img src="{{ BaseURL + product.image }}" alt="{{ product.name }}">
+                <div>{{ product.name }}</div>
+              </span>
+              <span>
+                {{ product.quantity }}
+              </span>
+              <span>
+                Rs. {{ product.price * product.quantity }}
+              </span>
+            </div>
+            <div class="product">
+              <span>Total</span>
+              <span>{{ totalQuantity }}</span>
+              <span>Rs. {{ totalPrice }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="stepper-actions">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Proceed</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="paymentForm">
+        <form [formGroup]="paymentForm" novalidate>
+          <ng-template matStepLabel>Payment</ng-template>
+          <div class="sub-heading">Choose your payment option</div>
+          <mat-radio-group formControlName="paymentOption">
+            <mat-radio-button value="1">Credit Card</mat-radio-button>
+            <br>
+            <br>
+            <mat-radio-button value="2">Net Banking</mat-radio-button>
+            <br>
+            <br>
+            <mat-radio-button value="3">Cash on Delivery</mat-radio-button>
+          </mat-radio-group>
+          <div class="stepper-actions payment-actions">
+            <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+</div>

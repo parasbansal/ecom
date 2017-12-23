@@ -1,0 +1,14 @@
+.brand-name-box{
+    margin-left: 10px;
+}
+.brand-logo{
+    position: relative;
+    top: 5px;
+    height: 26px;
+}
+.brand-name{
+    margin-left: 5px;
+}
+.active{
+    background: #00000022;
+}

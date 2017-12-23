@@ -1,0 +1,36 @@
+mat-grid-tile{
+    background: #ddd;
+}
+
+.products{
+    text-align: center;
+}
+.product{
+    display: inline-block;
+    width: 250px;
+    margin: 10px;
+}
+.product mat-card{
+    height: 320px;
+}
+.product img{
+    margin-bottom: 0;
+}
+mat-card-content{
+    margin-bottom: 0;
+}
+.product .product-name{
+    font-size: 18px;
+    padding: 5px 0;
+}
+.product .price{
+    padding: 5px 0;
+}
+.product mat-card-actions{
+    border-top: 1px solid #aaa;
+}
+
+.mat-card-actions{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
